@@ -6,10 +6,10 @@ RUN chmod +rx /bin/user-entrypoint && /bin/user-entrypoint --init
 ENTRYPOINT ["/bin/user-entrypoint"]
 
 RUN set -eux; \
-# Install Red-DiscordBot dependencies
+# Install StarBot dependencies
     apt-get update; \
     apt-get install -y --no-install-recommends \
-        # Red-DiscordBot
+        # StarBot
         build-essential \
         git \
         # Required for building PyNaCl
@@ -23,12 +23,12 @@ RUN set -eux; \
     ; \
     rm -rf /var/lib/apt/lists/*; \
 # Set up all three config locations
-    mkdir -p /root/.config/Red-DiscordBot; \
-    ln -s /data/config.json /root/.config/Red-DiscordBot/config.json; \
-    mkdir -p /usr/local/share/Red-DiscordBot; \
-    ln -s /data/config.json /usr/local/share/Red-DiscordBot/config.json; \
-    mkdir -p /config/.config/Red-DiscordBot; \
-    ln -s /data/config.json /config/.config/Red-DiscordBot/config.json;
+    mkdir -p /root/.config/StarBot; \
+    ln -s /data/config.json /root/.config/StarBot/config.json; \
+    mkdir -p /usr/local/share/StarBot; \
+    ln -s /data/config.json /usr/local/share/StarBot/config.json; \
+    mkdir -p /config/.config/StarBot; \
+    ln -s /data/config.json /config/.config/StarBot/config.json;
 
 VOLUME /data
 

@@ -46,3 +46,9 @@ if [ -n "${PREFIXES}" ]; then
     python -O -m redbot docker --edit --no-prompt ${PREFIXES}
     unset PREFIXES
 fi
+
+if [ -n "${USERID}" ]; then
+    echo "Setting user id..."
+    python -O -m redbot docker --edit --no-prompt ${USERID}
+    unset PREFIXES
+fi

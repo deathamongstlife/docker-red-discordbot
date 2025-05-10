@@ -2,7 +2,7 @@
 set -euf
 
 if ! [ -t 0 ]; then
-    echo "redbot-setup needs to be run in an interactive shell (docker run -it)"
+    echo "starbot-setup needs to be run in an interactive shell (docker run -it)"
     exit 1
 fi
 
