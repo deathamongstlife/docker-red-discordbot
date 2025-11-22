@@ -38,6 +38,7 @@ while [ "${RETURN_CODE}" -eq 26 ]; do
     # Only configure bot if this is the first run
     if [ "${FIRST_RUN}" -eq 1 ]; then
         . /app/functions/configure-redbot.sh
+        FIRST_RUN=0
     fi
 
     # For default JSON setup...
@@ -70,5 +71,9 @@ while [ "${RETURN_CODE}" -eq 26 ]; do
     fi
     set -e
 
-    FIRST_RUN=0
+    if [ "${RETURN_CODE}" -eq 26 ]; then
+        echo "Red-DiscordBot has requested a restart"
+    fi
 done
+
+echo "Red-DiscordBot has stopped with exit code ${RETURN_CODE}"

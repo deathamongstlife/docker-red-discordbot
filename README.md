@@ -164,7 +164,6 @@ If you were using a non-JSON datastore, you will need to copy your `config.json`
         "STORAGE_DETAILS": {}
     }
 }
-
 ```
 The important part is that you make sure your instance name is "docker". This can either be done by using the `redbot --edit` command (from the un-migrated redbot) to rename the instance to "docker", or you can just modify the config.json file (like above) and manually name it.
 
